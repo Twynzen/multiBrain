@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from typing import Union
+from router import character
 
 app = FastAPI()
+app.include_router(character)
+
 
 @app.get("/home", status_code=200)
 def read_root():
