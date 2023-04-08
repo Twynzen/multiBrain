@@ -1,14 +1,14 @@
-# Documentación del Proyecto: Integración de GPT-3.5-turbo con Django
+# Documentación del Proyecto: Integración de GPT-3.5-turbo con FastAPI
 
 ## Resumen
 
-El objetivo de este proyecto es desarrollar un sistema de backend utilizando Django que permita almacenar y gestionar memorias y textos de personalización de personajes, conectarlo con la API de GPT-3.5-turbo de OpenAI y ofrecer servicios para convertir texto a audio y audio a texto.
+El objetivo de este proyecto es desarrollar un sistema de backend utilizando FastAPI que permita almacenar y gestionar memorias y textos de personalización de personajes, conectarlo con la API de GPT-3.5-turbo de OpenAI y ofrecer servicios para convertir texto a audio y audio a texto.
 
 ## Requisitos
 
-### Conexión a Django
+### Conexión a FastAPI
 
-1. Crear un nuevo proyecto en Django.
+1. Crear un nuevo proyecto en FastAPI.
 2. Configurar la base de datos para almacenar la información de los personajes y sus instancias.
 
 ### Modelo de datos
@@ -37,9 +37,9 @@ Crear los siguientes modelos para almacenar la información de los personajes y 
 
 ## Proceso de desarrollo
 
-1. **Configuración del entorno Django**: Instalar Django y configurar el proyecto, incluyendo la base de datos y el modelo de datos.
+1. **Configuración del entorno FastAPI**: Instalar FastAPI y configurar el proyecto, incluyendo la base de datos y el modelo de datos.
 
-2. **Implementación del modelo de datos**: Crear los modelos `Personaje` e `Instancia` con sus respectivos campos y relaciones en Django.
+2. **Implementación del modelo de datos**: Crear los modelos `Personaje` e `Instancia` con sus respectivos campos y relaciones en FastAPI.
 
 3. **Integración con la API de GPT-3.5-turbo**: Instalar la biblioteca de OpenAI y desarrollar las funciones necesarias para interactuar con la API.
 
@@ -115,3 +115,8 @@ print(generated_text)
 
 Se puede personalizar los parámetros de la función `generate_text` según tus necesidades, como el número máximo de tokens, la temperatura, entre otros.
 
+## Getting start
+
+Create a virtual environment with python venv
+Install dependencies with pip3 using the requirements.txt file
+Run this command: uvicorn main:app --reload --port 8011

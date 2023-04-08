@@ -3,9 +3,9 @@ from typing import Union
 from router import character
 
 app = FastAPI()
-app.include_router(character)
+app.include_router(character.router, prefix="/api/v1")
 
-
+""" Test endpoints """
 @app.get("/home", status_code=200)
 def read_root():
   return {"Hello": "World"}
