@@ -53,8 +53,6 @@ Crear los siguientes modelos para almacenar la información de los personajes y 
 
 Al finalizar el proyecto, se espera contar con un sistema de backend que permita almacenar y gestionar personajes e instancias, generar respuestas personalizadas y llamativas utilizando la API de GPT-3.5-turbo de OpenAI, y ofrecer servicios para convertir texto a audio y
 
-
-
 # Llamada a la API de GPT-3.5-turbo
 
 ## Requisitos previos
@@ -78,6 +76,7 @@ import os
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 ```
+
 ## Llamada a la API de GPT-3.5-turbo
 
 1. Importar la biblioteca de OpenAI y configurar la API key:
@@ -87,6 +86,7 @@ import openai
 
 openai.api_key = api_key
 ```
+
 2. Crear una función para llamar a la API de GPT-3.5-turbo:
 
 ```python
@@ -112,17 +112,21 @@ generated_text = generate_text(prompt)
 print(generated_text)
 ```
 
-
 Se puede personalizar los parámetros de la función `generate_text` según tus necesidades, como el número máximo de tokens, la temperatura, entre otros.
 
 ## Getting start
 
-Create a virtual environment with python venv
-Install dependencies with pip3 using the requirements.txt file
-Run this command: uvicorn main:app --reload --port 8011
+1. Create a virtual environment with python venv, I recommend to use WSL 2 `python3 -m venv env` and use this command to activate the env `source env/bin/activate`
 
-# Preguntas
-1. Cuando se ejecuta ¿Qué es lo que hace actualmente el programa? 
+2. Install dependencies with pip3 using the requirements.txt file
+`pip3 install -r requirements.txt`
+
+3. Run this command
+`uvicorn main:app --reload --port 8011`
+
+## Preguntas
+
+1. Cuando se ejecuta ¿Qué es lo que hace actualmente el programa?
 2. Podría darme un mapa de la arquitectura. Ojala dibujadito jaja
 3. Podría darme instrucción de alguna tarea para ver si puedo ayudar a implementar cosas
 4. Podría indicarme como se vincula con docker?
