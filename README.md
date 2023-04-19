@@ -124,10 +124,13 @@ Se puede personalizar los parámetros de la función `generate_text` según tus 
 3. Run this command
 `uvicorn main:app --reload --port 8011`
 
+Use this URL to see the endpoints:
+`http://localhost:8011/docs`
+
 ## Preguntas
 
-1. Cuando se ejecuta ¿Qué es lo que hace actualmente el programa?
-2. Podría darme un mapa de la arquitectura. Ojala dibujadito jaja
+1. Cuando se ejecuta ¿Qué es lo que hace actualmente el programa? 👌
+2. Podría darme un mapa de la arquitectura. Ojala dibujadito jaja #Todo
 3. Podría darme instrucción de alguna tarea para ver si puedo ayudar a implementar cosas
 4. Podría indicarme como se vincula con docker?
 5. Aclarme si el entorno virtual que se usa apra ejecutar el proyecto ¿cómo funciona?
