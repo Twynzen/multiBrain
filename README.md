@@ -130,7 +130,15 @@ Use this URL to see the endpoints:
 ## Preguntas
 
 1. Cuando se ejecuta ¿Qué es lo que hace actualmente el programa? 👌
+
 2. Podría darme un mapa de la arquitectura. Ojala dibujadito jaja #Todo
+
 3. Podría darme instrucción de alguna tarea para ver si puedo ayudar a implementar cosas
+Sí claro, puede crear un modulo llamado api en el que se realice el llamado a la API de chatgpt
+
 4. Podría indicarme como se vincula con docker?
-5. Aclarme si el entorno virtual que se usa apra ejecutar el proyecto ¿cómo funciona?
+Por el momento, solo crea una imagen de la base de datos mongo para que python se pueda conectar,
+se plantea más adelante construir en base al código python una imagen de solo la app + la base de datos
+
+5. Aclarme si el entorno virtual que se usa para ejecutar el proyecto ¿cómo funciona?
+Separa las dependencias locales de las globales.
