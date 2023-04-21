@@ -1,6 +1,4 @@
-# from motor.motor_asyncio import AsyncIOMotorClient
 from pymongo import MongoClient
-import pymongo.errors
 from config import MONGO_URI_DATABASE
 from helpers import Logs
 
@@ -15,7 +13,6 @@ class Database:
 
     def __init__(self):
         self.__connect_to_the_database()
-        
 
     def list_databases(self, client: MongoClient, print_databases: bool = False) -> None:
         self.log.write_info_in_a_log('Listing the databases', 'database')
@@ -28,8 +25,8 @@ class Database:
         of more than one connection to the database, the idea is to have only one
         connection to the database """
 
-    def __connect_to_the_database(self):
-        
+    def __connect_to_the_database(self) -> None:
+
         try:
             client = MongoClient(MONGO_URI_DATABASE)
             self.client = client
@@ -38,6 +35,9 @@ class Database:
             self.list_databases(self.client)
         except (Exception) as e:
             print(
-                f'Unexpected error, is not possible to connect to the database, please check the log')
+                f'Unexpected error with the database model, please check the log')
             self.log.write_error_in_a_log(e, 'database')
- 
+
+        @classmethod
+        def get_connection(self) -> MongoClient:
+            return self.client

@@ -5,6 +5,7 @@ from helpers import Logs
 try:
     connection = Database()
 except Exception as e:
+    print(e)
     log = Logs()
     print(
         f'Unexpected error, is not possible to connect to the database, please check the log')
