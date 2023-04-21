@@ -22,7 +22,7 @@ class Database:
             if (print_databases):
                 print(database)
 
-    """ AG: I created the connect to the database method to avoid the creation
+    """ AG: I created the connect to the database like a private method to avoid the creation
         of more than one connection to the database, the idea is to have only one
         connection to the database """
 
