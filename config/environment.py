@@ -3,18 +3,9 @@ import os
 
 load_dotenv()
 
-
-class DatabaseEnvironment:
-    user: str
-    password: str
-    host: str
-    port: int
-
-    def __init__(self):
-        self.user = os.getenv("MONGODB_USER")
-        self.password = os.getenv("MONGODB_PASS")
-        self.host = os.getenv("MONGODB_HOST")
-        self.port = os.getenv("MONGODB_PORT")
-
-    def __str__(self) -> str:
-        return f"user: {self.user}\npassword: {self.password}\nhost: {self.host}\nport: {self.port}\n"
+""" Database environment """
+_user = os.getenv("MONGODB_USER")
+_password = os.getenv("MONGODB_PASS")
+_host = os.getenv("MONGODB_HOST")
+_port = os.getenv("MONGODB_PORT")
+MONGO_URI_DATABASE = f'mongodb://{_user}:{_password}@{_host}:{_port}/'
