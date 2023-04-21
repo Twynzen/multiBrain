@@ -1,7 +1,8 @@
 # from motor.motor_asyncio import AsyncIOMotorClient
 from pymongo import MongoClient
+import pymongo.errors
 from config import MONGO_URI_DATABASE
-from helpers import write_info_in_a_log
+from helpers import Logs
 
 
 class Database:
@@ -10,15 +11,16 @@ class Database:
     host: str
     port: int
     client: MongoClient
+    log = Logs()
 
     def __init__(self):
         self.__connect_to_the_database()
-        self.list_databases(self.client)
+        
 
     def list_databases(self, client: MongoClient, print_databases: bool = False) -> None:
-        write_info_in_a_log('Listing the databases', 'database')
+        self.log.write_info_in_a_log('Listing the databases', 'database')
         for database in client.list_database_names():
-            write_info_in_a_log(database, 'database')
+            self.log.write_info_in_a_log(database, 'database')
             if (print_databases):
                 print(database)
 
@@ -27,10 +29,15 @@ class Database:
         connection to the database """
 
     def __connect_to_the_database(self):
+        
         try:
             client = MongoClient(MONGO_URI_DATABASE)
             self.client = client
-            write_info_in_a_log(
+            self.log.write_info_in_a_log(
                 'Conected successfully to the database', 'database')
-        except Exception as e:
-            print(f'Unexpected error, details: ', e)
+            self.list_databases(self.client)
+        except (Exception) as e:
+            print(
+                f'Unexpected error, is not possible to connect to the database, please check the log')
+            self.log.write_error_in_a_log(e, 'database')
+ 

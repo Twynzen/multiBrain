@@ -1,1 +1,1 @@
-from .write_log import write_info_in_a_log
+from .write_log import Logs
