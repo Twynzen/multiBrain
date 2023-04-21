@@ -15,7 +15,6 @@ class DatabaseEnvironment:
         self.password = os.getenv("MONGODB_PASS")
         self.host = os.getenv("MONGODB_HOST")
         self.port = os.getenv("MONGODB_PORT")
-        print(self)
 
     def __str__(self) -> str:
         return f"user: {self.user}\npassword: {self.password}\nhost: {self.host}\nport: {self.port}\n"
