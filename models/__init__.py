@@ -1,2 +1,1 @@
-from .character import Character
-from .database import Database
+from .character import CharacterModel
