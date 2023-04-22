@@ -11,6 +11,7 @@ class CharacterService():
     def create(self):
         print(self.description)
         connection = Database.get_connection()
-        print(connection)
-        # database = self.client_database.multibrain
-        # collection_characters = database.characters
+        database = connection.multibrain
+        collection_characters = database.characters
+        result = collection_characters.insert_one(self.description)
+        return result
