@@ -121,13 +121,31 @@ Se puede personalizar los parámetros de la función `generate_text` según tus 
 2. Install dependencies with pip3 using the requirements.txt file
 `pip3 install -r requirements.txt`
 
-3. Run this command
+3. Create in the root directory, a .env file, you can use a template the example.env file
+
+4. Run this command
 `uvicorn main:app --reload --port 8011`
 
-Use this URL to see the endpoints:
+5. Use this URL to see the endpoints:
 `http://localhost:8011/docs`
 
-## Preguntas
+## Test with characters post
+
+Send a POST request to this URL when it's running the app: http://localhost:8011/api/v1/characters/, 
+you can use POSTMAN or INSOMNIA
+
+Use this format: 
+```json
+{
+    "description": "Hello world!"
+}
+```
+
+And finally, use MongoDB Compass to check the information with this URL String:
+mongodb://<user>:<password>@localhost:27099/, the user and password depends of the docker-compose file
+
+
+## Questions
 
 1. Cuando se ejecuta ¿Qué es lo que hace actualmente el programa? 👌
 
