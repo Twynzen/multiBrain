@@ -1,5 +1,6 @@
 import models
 from fastapi import APIRouter
+from services import CharacterService
 
 router = APIRouter()
 
@@ -15,5 +16,6 @@ async def get_character_by_id(id):
 
 
 @router.post("/characters/", tags=["users"])
-async def post_character(character: models.CharacterModel):
-    character.create();
+async def post_character(characterDescription: models.CharacterModel):
+    service = CharacterService(characterDescription)
+    service.create()
